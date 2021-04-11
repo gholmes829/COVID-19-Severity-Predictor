@@ -1,3 +1,13 @@
+html, body {
+  background-image: linear-gradient(rgb(31, 31, 31), #6e6e6ec5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-color: #202020;
+  color: #c5c5c5;
+}
+
 .App {
   margin: auto;
   text-align: center;
@@ -11,4 +21,18 @@
 #h1, h3 {
   width: 75%;
   margin: auto;
+}
+
+.Button {
+  position: relative;
+  overflow: hidden;
+  background-color: #c5c5c5;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #333;
+  cursor: default;
+  outline: none;
+  padding: 8px 8px 8px 8px;
+  transition: all 200ms ease;
 }
