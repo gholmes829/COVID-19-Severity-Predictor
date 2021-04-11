@@ -75,8 +75,10 @@ class App extends React.Component {
         
       })
       .then(output => {
-        console.log(output);
-        this.setState({output: JSON.stringify(output)});
+        let death = output.death;
+        let icu = output.icu;
+        let hosp = output.hosp;
+        this.setState({output: ("Death: " + death + "\nICU: " + icu + "\nHospital: " + hosp)});
       })
       .catch(err => {
         this.setState({output: 'Error occurred in backend!!!'});
