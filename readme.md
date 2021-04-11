@@ -1,5 +1,5 @@
 # COVID-19 Severity Predictor
-This is a project started at HackKU 2021 by Daniel Johnson and Grant Holmes<br>
+This is a project started at HackKU 2021 by Daniel Johnson and Grant Holmes.<br>
 
 ## Explanation
 This project uses artificial neural networks trained on a public CDC COVID-19 dataset that can be found here:<br>
