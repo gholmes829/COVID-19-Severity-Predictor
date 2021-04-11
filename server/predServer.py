@@ -9,7 +9,9 @@ import numpy as np
 app = Flask(__name__)
 cors = CORS(app)
 
-model = load_model(os.path.join("./model/","covid_model.h5"))
+modelHosp = load_model(os.path.join("./model/","covid_model_hosp.h5"))
+modelIcu = load_model(os.path.join("./model/","covid_model_icu.h5"))
+modelDeath = load_model(os.path.join("./model/","covid_model_death.h5"))
 
 @app.route('/', methods=['POST'])
 def predict():
@@ -28,10 +30,9 @@ def predict():
         x[0,7] = content['Ot_NH']
         x[0,8] = content['PI_NH']
         x[0,9] = content['Wh_NH']
-        pred = model.predict(x)
-        hosp = float(pred[0][0])
-        icu = float(pred[0][1])
-        death = float(pred[0][2])
+        hosp = format(round(float(modelHosp.predict(x)[0]), 3), 'f')
+        icu = format(round(float(modelIcu.predict(x)[0]), 3), 'f')
+        death = format(round(float(modelDeath.predict(x)[0]), 3), 'f')
         response = {"id":str(uuid.uuid4()),"hosp":hosp,"icu":icu,"death":death}
     else:
         response = {"id":str(uuid.uuid4()),"errors":errors}
