@@ -94,6 +94,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>COVID-19 Severity Predictor</h1>
+        <h3>This is a tool that uses neural networks trained on CDC public data to predict severity of COVID-19 infection on non-vaccinated indiviudals.<br></br>This is not medical advice and is not affiliated with any medical organization.<br></br>Please follow all CDC guidelines even if your predicted severity is low!</h3>
         <div className="DropDown">
           <Dropdown options={this.age} onChange={(e) => {this.inputs.age = e.value}} placeholder="Select age group" />
           <Dropdown options={this.sex} onChange={(e) => {this.inputs.sex = e.value}} placeholder="Select sex" />
