@@ -78,7 +78,7 @@ class App extends React.Component {
         let death = output.death;
         let icu = output.icu;
         let hosp = output.hosp;
-        this.setState({output: ("Death: " + death + "\nICU: " + icu + "\nHospital: " + hosp)});
+        this.setState({output: ("Death: " + death + "%\nICU: " + icu + "%\nHospital: " + hosp + "%")});
       })
       .catch(err => {
         this.setState({output: 'Error occurred in backend!!!'});
