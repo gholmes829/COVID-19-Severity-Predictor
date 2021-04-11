@@ -10,7 +10,10 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      output: ''
+      output: '',
+      death: '',
+      icu: '',
+      hosp: '',
     }
 
     // user inputs
@@ -78,7 +81,7 @@ class App extends React.Component {
         let death = output.death;
         let icu = output.icu;
         let hosp = output.hosp;
-        this.setState({output: ("Death: " + (parseFloat(death)*100).toFixed(3) + "%\nICU: " + (parseFloat(icu)*100).toFixed(3) + "%\nHospital: " + (parseFloat(hosp)*100).toFixed(3) + "%")});
+        this.setState({output: "Results:", death: "Death: " + (parseFloat(death)*100).toFixed(3) + "%", icu: "ICU: " + (parseFloat(icu)*100).toFixed(3) + "%", hosp: "Hospital: " + (parseFloat(hosp)*100).toFixed(3) + "%"});
       })
       .catch(err => {
         this.setState({output: 'Error occurred in backend!!!'});
@@ -105,6 +108,12 @@ class App extends React.Component {
         </div>
         <br></br>
         <h3>{this.state.output}</h3>
+        <br></br>
+        <h3>{this.state.hosp}</h3>
+        <br></br>
+        <h3>{this.state.icu}</h3>
+        <br></br>
+        <h3>{this.state.death}</h3>
       </div>
     );
   }
