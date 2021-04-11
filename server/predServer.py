@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
 import uuid
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -6,11 +7,11 @@ from tensorflow.keras.models import load_model
 import numpy as np
 
 app = Flask(__name__)
-
+cors = CORS(app)
 
 model = load_model(os.path.join("./model/","covid_model.h5"))
 
-@app.route('/api/covid', methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     print(request)
     content = request.json
@@ -34,7 +35,8 @@ def predict():
         response = {"id":str(uuid.uuid4()),"hosp":hosp,"icu":icu,"death":death}
     else:
         response = {"id":str(uuid.uuid4()),"errors":errors}
+    print(response)
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(host= '127.0.0.1',debug=True)
+    app.run(host= 'localhost',debug=True)
