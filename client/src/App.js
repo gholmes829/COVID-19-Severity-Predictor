@@ -65,13 +65,18 @@ class App extends React.Component {
       }
 
       // send request to API
-      fetch('//0.0.0.0:5000/api/covid', {
+      fetch('http://localhost:5000/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
       })
       .then(output => {
-        this.setState({output: output});
+        return output.json();
+        
+      })
+      .then(output => {
+        console.log(output);
+        this.setState({output: JSON.stringify(output)});
       })
       .catch(err => {
         this.setState({output: 'Error occurred in backend!!!'});
