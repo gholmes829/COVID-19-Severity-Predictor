@@ -8,6 +8,7 @@ There are three neural networks that calculate the probability of death, being s
 The neural networks' architecture are 10->10->1, using reLu for activation layers and sigmoid for the output layer.<br>
 
 ## How To Use
-1. Install dependencies
-2. Navigate to "client" folder in a terminal and run npm start
-3. Naviate to "server" folder in a terminal and run python predServer.py
+1. Install Python and React dependencies
+2. Navigate to "client" folder in a terminal and run `npm install`
+3. Navigate to "client" folder in a terminal and run `npm start`
+4. Naviate to "server" folder in a terminal and run `python predServer.py`
