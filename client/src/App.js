@@ -81,7 +81,7 @@ class App extends React.Component {
         let death = output.death;
         let icu = output.icu;
         let hosp = output.hosp;
-        this.setState({output: "Results:", death: "Death: " + (parseFloat(death)*100).toFixed(3) + "%", icu: "ICU: " + (parseFloat(icu)*100).toFixed(3) + "%", hosp: "Hospital: " + (parseFloat(hosp)*100).toFixed(3) + "%"});
+        this.setState({output: "Results:", death: "Death: " + (parseFloat(death)*100).toFixed(2) + "%", icu: "ICU: " + (parseFloat(icu)*100).toFixed(2) + "%", hosp: "Hospital: " + (parseFloat(hosp)*100).toFixed(2) + "%"});
       })
       .catch(err => {
         this.setState({output: 'Error occurred in backend!!!'});
@@ -107,12 +107,12 @@ class App extends React.Component {
           <button className="Button" onClick={this._handleSubmit}>Predict</button>
         </div>
         <br></br>
-        <h3>{this.state.output}</h3>
-        <br></br>
+        <h2>{this.state.output}</h2>
+        
         <h3>{this.state.hosp}</h3>
-        <br></br>
+        
         <h3>{this.state.icu}</h3>
-        <br></br>
+        
         <h3>{this.state.death}</h3>
       </div>
     );
