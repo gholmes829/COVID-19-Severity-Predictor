@@ -43,7 +43,7 @@ class App extends React.Component {
   
   _handleSubmit() {
     let valid = !Object.values(this.inputs).some( (value) => {return value === ''} );
-    console.log(valid);
+
     if (valid) {
       this.setState({output: 'Calculating...'});
 
@@ -65,7 +65,7 @@ class App extends React.Component {
       }
 
       // send request to API
-      fetch('http://0.0.0.0:5000/api/covid', {
+      fetch('//0.0.0.0:5000/api/covid', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
