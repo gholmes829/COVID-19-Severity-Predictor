@@ -26,7 +26,7 @@ html, body {
 .Button {
   position: relative;
   overflow: hidden;
-  background-color: #c5c5c5;
+  background-color: #eeeeee;
   border: 1px solid #ccc;
   border-radius: 2px;
   box-sizing: border-box;
